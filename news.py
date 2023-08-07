@@ -31,7 +31,7 @@ def loadWeb(url):
 
 def generate_news(url, content):
     prompt_template = """
-    You are a good news writer. You are writing news in Chinese based on the content. You use markdown and add a link to the news. Excluding the url, ensure your answer is in 80-100 characters and contain details. Ensure the accuracy and no misleading information. If the summary is incorrect, return only NA.
+    You are a good news writer. You are writing news in Chinese based on the content. You use markdown and add a link to the news. Excluding the url, ensure your answer is in 80-100 characters and contain details. Place one space between number and character. Ensure the accuracy and no misleading information. If the summary is incorrect, return only NA.
 
 URL: "https://9to5mac.com/2023/08/03/sources-iphone-15-event-september/",
 summary: {content1},
