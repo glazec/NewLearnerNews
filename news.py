@@ -116,7 +116,9 @@ def generate_news_by_url(url, index=1):
 def main():
     st.title("早晚报生成器（Alpha）")
     selector = st.selectbox("选择你的输入", ["多个URL", "URL", "报道"])
+
     if selector == "多个URL":
+        newsletterTypeSelector = st.selectbox("选择你的新闻类型", ["早报", "晚报"])
         text_input = st.text_area(
             label="输入多个 URL(Youtube, Weibo, Twitter,图片 等内容无法抓取)", value="https://twitter.com/OpenAI/status/1687159114047291392\nhttps://www.macrumors.com/2023/08/04/iphone-16-pro-stacked-camera-sensor/")
     else:
@@ -128,7 +130,7 @@ def main():
         elif selector == "多个URL":
             urls = text_input.split('\n')
             news_content = []
-            my_bar = st.progress(0, text="生成早报中")
+            my_bar = st.progress(0, text="生成早晚报中")
             for i in range(len(urls)):
                 news = generate_news_by_url(urls[i], i+1)
                 if news != "NA":
@@ -158,7 +160,12 @@ def main():
                     modified_element = "9️⃣ "+element
                 modified_news_content.append(modified_element)
 
-            news_content = "# News\n\n☀️ 自留地早报【" + \
+            news_content = "# News\n\n"
+            if newsletterTypeSelector == "早报":
+                news_content += "☀️ 自留地早报"
+            else:
+                news_content += "🌃 自留地晚报"
+            news_content += "【" + \
                 str(datetime.date.today().month) + "." + \
                 str(datetime.date.today().day) + "】\n\n"
             news_content += "\n\n".join(modified_news_content)
