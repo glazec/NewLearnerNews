@@ -5,3 +5,5 @@ langchain
 beautifulsoup4
 openai
 sentry_sdk
+python-telegram-bot
+icecream
