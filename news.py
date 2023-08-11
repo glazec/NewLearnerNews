@@ -173,9 +173,9 @@ def main():
                     fail_url.append(urls[i])
                 my_bar.progress(int((i+1)*100/len(urls)),
                                 text="生成新闻 "+str(i+1))
-            st.subheader("草稿")
             if len(fail_url) > 0:
                 st.warning("无法获取以下 URL 的内容 "+', '.join(fail_url))
+            st.subheader("草稿")
             modified_news_content = []
             for i, element in enumerate(news_content):
                 if i+1 == 1:
