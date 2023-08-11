@@ -128,10 +128,14 @@ def main():
         if selector == "URL":
             generate_news_by_url(text_input)
         elif selector == "多个URL":
-            urls = text_input.split('\n')
+            # remove empty lines in urls
+            urls = [url for url in text_input.splitlines() if text_input != ""]
+            print(urls)
             news_content = []
             my_bar = st.progress(0, text="生成早晚报中")
             for i in range(len(urls)):
+                if urls[i] == '':
+                    pass
                 news = generate_news_by_url(urls[i], i+1)
                 if news != "NA":
                     news_content.append(news)
