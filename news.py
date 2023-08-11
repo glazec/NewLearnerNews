@@ -4,6 +4,17 @@ from bs4 import BeautifulSoup
 from langchain import PromptTemplate, LLMChain
 from langchain.chat_models import ChatOpenAI
 import datetime
+from icecream import ic
+import sentry_sdk
+
+sentry_sdk.init(
+    dsn="https://fc880ea6ee11c5613ad2eb62d9eb2bf1@o262884.ingest.sentry.io/4505684111785984",
+
+    # Set traces_sample_rate to 1.0 to capture 100%
+    # of transactions for performance monitoring.
+    # We recommend adjusting this value in production.
+    traces_sample_rate=1.0
+)
 
 content1 = "Apple is reportedly prepping for an iPhone 15 Pro event on September 13. According to information seen by 9to5Mac, mobile carriers have been asking employees not to take days off on September 13 due to a major smartphone announcement. The event is expected to announce the new iPhones, which will feature a new design with slightly curved edges and thinner bezels around the display, Dynamic Island and USB-C instead of Lightning, and a new periscope lens for better optical zoom on the Pro models. Pre-orders are expected to begin on September 15, with the official launch a week later on September 22. Prices of the new iPhones may rise by up to $200 compared to the current generation."  # noqa: E501
 
@@ -108,6 +119,14 @@ def generate_news_by_url(url, index=1):
         if news["text"] == "NA":
             st.write("无法抓取 URL 内容")
             st.write(url)
+            sentry_sdk.capture_message({
+                "message": "Can't retrieve URL content from "+url,
+                "timestamp": datetime.datetime.utcnow().isoformat(),
+                "context": {
+                    "url": url,
+                    "content": content
+                }
+            })
         else:
             st.write(news["text"])
     return news["text"]
