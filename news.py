@@ -132,16 +132,18 @@ def main():
             urls = [url for url in text_input.splitlines() if text_input != ""]
             print(urls)
             news_content = []
+            fail_url = []
             my_bar = st.progress(0, text="生成早晚报中")
             for i in range(len(urls)):
-                if urls[i] == '':
-                    pass
                 news = generate_news_by_url(urls[i], i+1)
                 if news != "NA":
                     news_content.append(news)
+                else:
+                    fail_url.append(urls[i])
                 my_bar.progress(int((i+1)*100/len(urls)),
                                 text="生成新闻 "+str(i+1))
             st.subheader("草稿")
+            st.warning("无法获取以下 URL 的内容 "+', '.join(fail_url))
             modified_news_content = []
             for i, element in enumerate(news_content):
                 if i+1 == 1:
