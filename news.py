@@ -32,6 +32,112 @@ content5 = "Nikon has issued an important notice to its users regarding a potent
 
 content6 = " 一加手机岛 23-8-4 08:31 发布于广东 来自一加Ace2Pro 性能巅峰 淘汰 8GB， 12GB 起步， 16GB 普及， 24GB 引领，还有呢？ #一加Ace2Pro#，2023年8月，敬请期待。 关注＋转评，抽送一个一加真无线耳机。 8GB 淘汰 12GB 起步 116GB 普及 24GB 引领"  # noqa: E501
 
+microsoft_content_input = """Hello Windows Insiders, today we are releasing Windows 11 Insider Preview Build 23521 to the Dev Channel.
+
+What’s new in Build 23521
+Changes and Improvements
+[Windows 365]
+Windows Insiders in the Dev and Beta Channels can participate in the public preview of Windows 365 Switch. Windows 365 Switch provides the ability to easily move between a Windows 365 Cloud PC and the local desktop using the same familiar keyboard commands, as well as a mouse-click or a swipe gesture through Task View on the Windows 11 taskbar. Please read this blog post for all the details on how to participate.
+Easily switch between a Windows 365 Cloud PC and the local desktop via Task View.
+Easily switch between a Windows 365 Cloud PC and the local desktop via Task View.
+[Windows Copilot]
+Windows Insiders in the Dev Channel who login and are managed by AAD (soon to be Microsoft Entra ID) will see Windows Copilot enabled for them again without the need to enable it via Group Policy Editor.
+[Taskbar & System Tray]
+To make it easier to enable never combined mode on the taskbar, we have updated the settings. You can turn never combined mode on by simply adjusting “Combine taskbar buttons and hide labels” to never. And we provide a separate setting for turning this on for other taskbars (multiple monitor scenarios for example).
+Updated settings for never combined mode.
+Updated settings for never combined mode.
+[Dynamic Lighting]
+You can now instantly sync your Windows accent color with the devices around you with the “Match my Windows accent color” toggle under “Effects” for Dynamic Lighting via Settings > Personalization > Dynamic Lighting. This improvement started rolling out in last week’s Dev Channel flight.
+We have added the ability to choose a custom color to light up your devices with.
+[Task Manager]
+We’ve updated the Task Manager settings page to match the design principles of Windows 11. The design has a similar look and feel to the Settings in Windows 11 and provides a cleaner UI separating categories into different sections. Oh, and we updated some dialogs in Task Manager too.
+Redesigned Task Manager settings.
+Redesigned Task Manager settings.
+[Windows Spotlight]
+After doing an OS update, in certain cases such as using the default Windows 11 background or a solid color – Windows Spotlight may be enabled for you. If you decide you don’t want Windows Spotlight enabled, you can turn it off and in future OS updates it should not be enabled for you again unless you choose to re-enable the experience.
+[Search on the Taskbar]
+Windows Search now uses the Microsoft Bing Search app to return web content and search results. In the European Economic Area (EEA), you can enable installed Microsoft Store apps that implement a web search provider to return web content and search results in Windows Search through Settings.
+[Settings]
+The end task feature under System > For Developers no longer requires Developer Mode to be enabled first before it can be used.
+[ADDED] Under Settings > Personalization > Device usage, we have added “Development” to the list and toggling it on will launch Dev Home. This matches what is shown in OOBE (“out of box experience”).
+[Other]
+In the European Economic Area (EEA), Windows will now require consent to share data between Windows and other signed-in Microsoft services. You will see some Windows features start to check for consent now, with more being added in future builds. Without consent to share data between Windows and other signed-in Microsoft services, some functionality in Windows features may be unavailable, for example certain types of file recommendations under “Recommended” on the Start menu.
+Fixes
+[File Explorer]
+Fixed an issue where you couldn’t drag a file out of an archived folder to extract it with one of the newly supported archive formats.
+Fix an issue where when extracting one of the newly supported archive formats using the Extract All option in the context menu, it wasn’t working unless Windows Explorer was set as the default for that file type.
+When trying to extract one of the new archive formats and the file is password encrypted, it will now show a message saying this isn’t currently supported.
+Fixed a bug where Insiders may have experienced a File Explorer crash when dragging the scroll bar or attempting to close the window during an extended file-loading process.
+We fixed the following issues for Insiders who have the modernized File Explorer address bar that began rolling out with Build 23475:
+
+Fixed an issue which was causing the search box in File Explorer to not work well with IMEs.
+Fixed an issue where pasting using the context menu in the address bar wasn’t working (or other context menu actions in the address bar).
+We fixed the following issues for Insiders who have the modernized File Explorer Home that began rolling out with Build 23475:
+
+Fixed an issue where when trying to scroll with touch on Home might result in everything getting selected.
+Fixed a white flash in dark theme when switching between Home and Gallery.
+[Taskbar & System Tray]
+Fixed an issue that removed the USB icon and its options from the system tray.
+Fixed an issue where the titles were missing from taskbar previews when turning on tablet-optimized taskbar while using uncombined taskbar.
+Fixed an issue where uncombined taskbar’s app indicators weren’t shown correctly after it showed something was being downloaded.
+Fixed an explorer.exe crash impacting system tray reliability.
+Fixed an issue where the End Task feature wasn’t working if you tried it when there were multiple windows open of that app.
+Fixed an issue where using End Task on certain apps would cause other unrelated apps to close.
+[HDR Backgrounds]
+Fixed an issue where your HDR wallpaper might appear washed out although HDR was enabled.
+Fixed an issue where it wasn’t possible to select .JXL files for your wallpaper slideshow.
+[Other]
+If Get Help isn’t installed, when opening one of the troubleshooters in Settings, it will now prompt you to install it, rather than showing an error about not having an app associated for the action.
+NOTE: Some fixes noted here in Insider Preview builds from the Dev Channel may make their way into the servicing updates for the released version of Windows 11.
+
+Known issues
+[General]
+We’re investigating reports that the taskbar isn’t loading for some Insiders when logging into their PC after installing this build. See this forum post for more details and workaround options.
+We’re working on the fix for an issue causing explorer.exe to crash on the login screen when attempting to enter safe mode.
+[Start menu]
+Some apps under All apps on the Start menu, such as PWA apps installed via Microsoft Edge, may incorrectly be labeled as a system component.
+[Search on the Taskbar]
+[ADDED] Sometimes the tooltip when mousing over the search box does not match the current search highlight.
+[Windows Copilot]
+You can use Alt + Tab to switch out of Windows Copilot, but not back into it. Windows + C will move focus back to Windows Copilot
+When first launching or after refreshing Copilot while using voice access you’ll need to use “Show grid” commands to click in the “Ask me anything” box for the first time.
+[Input]
+We’re investigating reports that typing with the Japanese and Chinese IMEs is not working correctly after the last flight.
+Widgets Update: Pin widgets board open
+We are beginning to roll out an update to Widgets for Windows Insiders in the Canary and Dev Channels that lets you pin the widgets board open, so your widgets board is always just a glance away. To pin the board open, simply click the pin icon in the top right corner of the board. Once your board is pinned open, the widgets board will no longer light dismiss.
+
+New pin icon at the top of the widgets board to pin the widgets board open.
+New pin icon at the top of the widgets board to pin the widgets board open.
+While the board is pinned, you can still close it by:
+
+Open the widgets board via the Widgets button on the taskbar.
+Pressing the ESC key while Widgets is in the foreground.
+Swiping on the left edge of the screen if you have a touch device.
+To unpin the board, select the unpin icon in the top right corner of the board.
+
+FEEDBACK: Please file feedback in Feedback Hub (WIN + F) under Desktop Environment > Widgets. 
+
+Snipping Tool Update
+We are beginning to roll out an update to Snipping Tool (version 11.2306.43.0 and higher) to Windows Insiders in the Canary and Dev Channels. This update introduces new buttons to edit in Paint for screenshots and edit in Clipchamp for screen recordings.
+
+New buttons in Snipping Tool for editing screen clips in Paint and screen recordings in Clipchamp.
+New buttons in Snipping Tool for editing screen clips in Paint and screen recordings in Clipchamp.
+FEEDBACK: Please file feedback in Feedback Hub by clicking here.
+
+For developers
+You can download the latest Windows Insider SDK at aka.ms/windowsinsidersdk.
+
+SDK NuGet packages are now also flighting at NuGet Gallery | WindowsSDK which include:
+
+.NET TFM packages for use in .NET apps as described at aka.ms/windowsinsidersdk
+C++ packages for Win32 headers and libs per architecture
+BuildTools package when you just need tools like MakeAppx.exe, MakePri.exe, and SignTool.exe
+These NuGet packages provide more granular access to the SDK and better integration in CI/CD pipelines.
+
+SDK flights are now published for both the Canary and Dev Channels, so be sure to choose the right version for your Insider Channel.
+
+Remember to use adaptive code when targeting new APIs to make sure your app runs on all customer machines, particularly when building against the Dev Channel SDK. Feature detection is recommended over OS version checks, as OS version checks are unreliable and will not work as expected in all cases."""  # noqa: E501
+
 
 def loadWeb(url):
     response = requests.get(url)
@@ -152,12 +258,22 @@ def main():
         tg_user_id = st.selectbox(
             "选择你的 TG 用户名", ["@glazecl", "@kris_michiel", "张启", "@Newlearner365"])
         st.info("请确保至少和 @newlearner_news_bot 互动过一次，否则无法收到消息")
+    elif selector == "报道":
+        url_input = st.text_input(
+            label="输入你的 URL", value="https://blogs.windows.com/windows-insider/2023/08/10/announcing-windows-11-insider-preview-build-23521/")
+        content_input = st.text_area(
+            label="输入你的报道", value=microsoft_content_input)
     else:
         text_input = st.text_input(f"输入你的 {selector}")
 
     if st.button("生成并发送"):
         if selector == "URL":
             generate_news_by_url(text_input)
+        if selector == "报道":
+            with st.spinner('生成中'):
+                news = generate_news(url_input, content_input)
+                st.header("草稿")
+                st.write(news["text"])
         elif selector == "多个URL":
             # remove empty lines in urls
             urls = [url for url in text_input.splitlines() if url != ""]
@@ -209,13 +325,13 @@ def main():
             news_content += "\n\n".join(modified_news_content)
             news_content += "\n\n频道：@ NewlearnerChannel"
             st.markdown(news_content)
-        with st.spinner('发送中'):
-            escaped_news_content = '\!'.join(news_content.split("!"))
-            escaped_news_content = '\.'.join(news_content.split("."))
-            ic(asyncio.run(send_telegram(
-                escaped_news_content,
-                tg_id_dict[tg_user_id])))
-            st.success("发送成功")
+            with st.spinner('发送中'):
+                escaped_news_content = '\!'.join(news_content.split("!"))
+                escaped_news_content = '\.'.join(news_content.split("."))
+                ic(asyncio.run(send_telegram(
+                    escaped_news_content,
+                    tg_id_dict[tg_user_id])))
+                st.success("发送成功")
 
 
 if __name__ == "__main__":
