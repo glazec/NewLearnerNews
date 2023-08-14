@@ -253,7 +253,7 @@ def main():
 
     if selector == "多个URL":
         newsletterTypeSelector = st.selectbox("选择你的新闻类型", ["早报", "晚报"])
-        text_input = st.text_area(
+        url_input = st.text_area(
             label="输入多个 URL(Youtube, Weibo, Twitter,图片 等内容无法抓取)", value="https://twitter.com/OpenAI/status/1687159114047291392\nhttps://www.macrumors.com/2023/08/04/iphone-16-pro-stacked-camera-sensor/")
         tg_user_id = st.selectbox(
             "选择你的 TG 用户名", ["@glazecl", "@kris_michiel", "张启", "@Newlearner365"])
@@ -264,11 +264,13 @@ def main():
         content_input = st.text_area(
             label="输入你的报道", placeholder=microsoft_content_input)
     else:
-        text_input = st.text_input(f"输入你的 {selector}")
-
+        url_input = st.text_input(f"输入你的 {selector}")
+    sentry_sdk.set_context("character", {
+        "url": url_input
+    })
     if st.button("生成并发送"):
         if selector == "URL":
-            generate_news_by_url(text_input)
+            generate_news_by_url(url_input)
         if selector == "报道":
             with st.spinner('生成中'):
                 news = generate_news(url_input, content_input)
@@ -276,7 +278,7 @@ def main():
                 st.write(news["text"])
         elif selector == "多个URL":
             # remove empty lines in urls
-            urls = [url for url in text_input.splitlines() if url != ""]
+            urls = [url for url in url_input.splitlines() if url != ""]
             ic(urls)
             news_content = []
             fail_url = []
