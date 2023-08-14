@@ -160,7 +160,7 @@ def main():
             generate_news_by_url(text_input)
         elif selector == "多个URL":
             # remove empty lines in urls
-            urls = [url for url in text_input.splitlines() if text_input != ""]
+            urls = [url for url in text_input.splitlines() if url != ""]
             ic(urls)
             news_content = []
             fail_url = []
