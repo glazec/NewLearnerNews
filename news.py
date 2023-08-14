@@ -260,9 +260,9 @@ def main():
         st.info("请确保至少和 @newlearner_news_bot 互动过一次，否则无法收到消息")
     elif selector == "报道":
         url_input = st.text_input(
-            label="输入你的 URL", value="https://blogs.windows.com/windows-insider/2023/08/10/announcing-windows-11-insider-preview-build-23521/")
+            label="输入你的 URL", placeholder="https://blogs.windows.com/windows-insider/2023/08/10/announcing-windows-11-insider-preview-build-23521/")
         content_input = st.text_area(
-            label="输入你的报道", value=microsoft_content_input)
+            label="输入你的报道", placeholder=microsoft_content_input)
     else:
         text_input = st.text_input(f"输入你的 {selector}")
 
