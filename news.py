@@ -266,7 +266,8 @@ def main():
     else:
         url_input = st.text_input(f"输入你的 {selector}")
     sentry_sdk.set_context("character", {
-        "url": url_input
+        "url": url_input,
+        "tg_user_id": tg_user_id
     })
     if st.button("生成并发送"):
         if selector == "URL":
@@ -330,6 +331,7 @@ def main():
             with st.spinner('发送中'):
                 escaped_news_content = '\!'.join(news_content.split("!"))
                 escaped_news_content = '\.'.join(news_content.split("."))
+                escaped_news_content = '\-'.join(news_content.split("-"))
                 ic(asyncio.run(send_telegram(
                     escaped_news_content,
                     tg_id_dict[tg_user_id])))
