@@ -19,7 +19,7 @@ sentry_sdk.init(
     traces_sample_rate=1.0
 )
 tg_id_dict = {"@glazecl": "828090678", "@kris_michiel": "5616258966",
-              "@Newlearner365": "614953732", "张启": "5156033499"}
+              "@Newlearner365": "614953732", "张启": "5156033499", "Aaron Lou": "1149527409"}
 content1 = "Apple is reportedly prepping for an iPhone 15 Pro event on September 13. According to information seen by 9to5Mac, mobile carriers have been asking employees not to take days off on September 13 due to a major smartphone announcement. The event is expected to announce the new iPhones, which will feature a new design with slightly curved edges and thinner bezels around the display, Dynamic Island and USB-C instead of Lightning, and a new periscope lens for better optical zoom on the Pro models. Pre-orders are expected to begin on September 15, with the official launch a week later on September 22. Prices of the new iPhones may rise by up to $200 compared to the current generation."  # noqa: E501
 
 content2 = """Harmonyos 放肆玩亠起玩 有个性 全新的设计让你的照片、心情 甚至是自然天气都能成为你个性的完美表达 艺术主角’ 智能识别画面主体 多样艺术背景随心搭 海报标题’ 字体设计更多元 (i26 全新Emoji表情’ 情绪表达更多样 时尚画册’ 杂志化布局 0g:0g 趣味心情主题’ 把你的心情设省成主题 全景天气壁纸” 将自然天气装进手机，实时感知天气变化 Harmonyos 4趣味主题‘ 可爱胜胀风，更立体更好玩 (08:0g 更高效 信息处理和内容分享变得更加高效便捷 实况窗 任务进度随时掌握，可大可小可交互 更多设备更高效 弦月窗° 实时任务状态，拾腕便知 生道费中 𣊭 全新通知中心 “置顶"关键信息 轻重缓急一目了然 超级中转站° 双指长按 提取文本图片 更多应用随手拖入 多屏同享 音画同步 座舱也能一起看大片 演示批注° 可圈点可标注，多种文档不限应用 手写批注实时展示，会议交流高效轻松 游戏流转’ 痤舱畅玩手澼 航拍流转 手机航拍流转座舱 “大智慧 全新小艺，更聪明、更能干、更贴心 更聪明 智慧交互 更贴心 个性化服务 从准确指令 到自然对话 随口记事 适时提醒 全新小艺” 大有不同 好的．邦徐记佳了 场景化服务组合 每杂场景 轻松绾排 更能干 高效生产力 资讯内容 快速摘要 看图说话 服务直达 文家创作 内容辅助 照片趣玩 玩出创意 畅快玩 全新华为方舟引擎带来图形、多媒体、内存、调度、存储、低功耗 六大引擎技术，多设备也流畅 华为方舟引擎1。 图形 寧 多媒恷引擎 肉葆 𦘦 调度引禁 低功栝引禁 20 % 个 更流畅 30分钟个 更省电 超安心 风险更可视，用机更安心 全新应用管控中心。 更可视 更安心 新无风险 风險成用安装 拦截提醒 风险应用安装 自动管控。 风险应用安装 最小授予 凤險成用运行 主动抬截 应用跟踪管理。 是否允许应用跟踪你在其他应用和网站上的活动 由你说了算"""  # noqa: E501""
@@ -256,7 +256,7 @@ def main():
         url_input = st.text_area(
             label="输入多个 URL(Youtube, Weibo, Twitter,图片 等内容无法抓取)", value="https://twitter.com/OpenAI/status/1687159114047291392\nhttps://www.macrumors.com/2023/08/04/iphone-16-pro-stacked-camera-sensor/")
         tg_user_id = st.selectbox(
-            "选择你的 TG 用户名", ["@glazecl", "@kris_michiel", "张启", "@Newlearner365"])
+            "选择你的 TG 用户名", ["@glazecl", "@kris_michiel", "张启", "Aaron Lou", "@Newlearner365"])
         st.info("请确保至少和 @newlearner_news_bot 互动过一次，否则无法收到消息")
     elif selector == "报道":
         url_input = st.text_input(
