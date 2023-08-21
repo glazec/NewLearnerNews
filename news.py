@@ -329,9 +329,12 @@ def main():
             news_content += "\n\n频道：@ NewlearnerChannel"
             st.markdown(news_content)
             with st.spinner('发送中'):
-                escaped_news_content = '\!'.join(news_content.split("!"))
                 escaped_news_content = '\.'.join(news_content.split("."))
-                escaped_news_content = '\-'.join(news_content.split("-"))
+                escaped_news_content = '\!'.join(
+                    escaped_news_content.split("!"))
+                escaped_news_content = '\-'.join(
+                    escaped_news_content.split("-"))
+                ic(escaped_news_content)
                 ic(asyncio.run(send_telegram(
                     escaped_news_content,
                     tg_id_dict[tg_user_id])))
