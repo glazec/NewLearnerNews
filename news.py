@@ -334,6 +334,10 @@ def main():
                     escaped_news_content.split("!"))
                 escaped_news_content = '\-'.join(
                     escaped_news_content.split("-"))
+                escaped_news_content = '\('.join(
+                    escaped_news_content.split("("))
+                escaped_news_content = '\)'.join(
+                    escaped_news_content.split(")"))
                 ic(escaped_news_content)
                 ic(asyncio.run(send_telegram(
                     escaped_news_content,
