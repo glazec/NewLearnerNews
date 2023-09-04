@@ -328,21 +328,39 @@ def main():
             news_content += "\n\n".join(modified_news_content)
             news_content += "\n\n频道：@ NewlearnerChannel"
             st.markdown(news_content)
+            escaped_news_content = "\n\n".join(modified_news_content)
             with st.spinner('发送中'):
-                escaped_news_content = '\.'.join(news_content.split("."))
+                escaped_news_content = '\.'.join(
+                    escaped_news_content.split("."))
                 escaped_news_content = '\!'.join(
                     escaped_news_content.split("!"))
                 escaped_news_content = '\-'.join(
                     escaped_news_content.split("-"))
-                escaped_news_content = '\('.join(
-                    escaped_news_content.split("("))
-                escaped_news_content = '\)'.join(
-                    escaped_news_content.split(")"))
+                # escaped_news_content = '\('.join(
+                # escaped_news_content.split("("))
+                # escaped_news_content = '\)'.join(
+                # escaped_news_content.split(")"))
                 escaped_news_content = '\='.join(
                     escaped_news_content.split("="))
-                ic(escaped_news_content)
+                escaped_news_content = '\*'.join(
+                    escaped_news_content.split("*"))
+                escaped_news_content = '\_'.join(
+                    escaped_news_content.split("_"))
+                escaped_news_content = '\~'.join(
+                    escaped_news_content.split("~"))
+                news_content = "\#News\n\n"
+                if newsletterTypeSelector == "早报":
+                    news_content += "☀️ 自留地早报"
+                else:
+                    news_content += "🌃 自留地晚报"
+                news_content += "【" + \
+                    str(datetime.date.today().month) + "\." + \
+                    str(datetime.date.today().day) + "】\n\n"
+                news_content += escaped_news_content
+                news_content += "\n\n频道：@ NewlearnerChannel"
+                ic(news_content)
                 ic(asyncio.run(send_telegram(
-                    escaped_news_content,
+                    news_content,
                     tg_id_dict[tg_user_id])))
                 st.success("发送成功")
 
